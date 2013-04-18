@@ -24,6 +24,33 @@ print is_anagram('star', 'rats')
 print is_anagram('dog', 'cat')
 print is_anagram('Star', 'Rats')
 
-#Ex. 10.13
 
+# Ex. 10.13
+# Write a program that finds all pairs of words that interlock
 
+def interlocked(first, second):
+    third = []
+    f = list(first.lower())
+    s = list(second.lower())
+    f = list(reversed(f))
+    s = list(reversed(s))
+    for i in range(len(f)):
+        third += f.pop()
+        third += s.pop()
+    thirdword = ''.join(third)
+    print thirdword
+
+    for line in open('words.txt'):
+        #print line
+        allwords = line.strip().lower()
+        #print allwords
+        if thirdword == allwords:
+            return True
+            break
+
+#print interlocked('dogs', 'cats')
+print interlocked('shoe', 'cold')
+print 'Done!'    
+    
+
+# Can you find any words that are three-way interlocked; that is, every third letter forms a word, starting from the first, second or third?
