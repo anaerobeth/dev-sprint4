@@ -52,33 +52,30 @@ def interlocked(first, second):
 print interlocked('shoe', 'cold')
 print 'Done!'
 
-
-# Can you find any words that are three-way interlocked; that is, every third letter forms a word, starting from the first, second or third?
-
-#first = 'abaca'
-#second = 'aback'
-#third = 'aba'
-
-#build list of words
-
-
-
 def threeway():
     wordlist = []
     for line in open('words.txt'):
         word = line.strip()
         wordlist.append(word)
-	for line in open('words.txt'):
-		word = line.strip()
-		#print word
-		#print word[0::3]
+    for line in open('words.txt'):
+        word = line.strip()
+        #print word
+        #print word[0::3]
         if word[0::3] in wordlist:
             if word[1::3] in wordlist:
-				if word[2::3] in wordlist:
-					print 'Three-way interlock found!'
-					print word
-					print word[0::3]
-					print word[1::3]
-					print word[2::3]
+                if word[2::3] in wordlist:
+                    print 'Three-way interlock found!'
+                    print word
+                    print word[0::3]
+                    print word[1::3]
+                    print word[2::3]
 
 print threeway()
+
+#Three-way interlock found!
+#abacuses
+#ace
+#bus
+#as
+
+
